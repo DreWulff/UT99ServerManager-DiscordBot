@@ -8,7 +8,7 @@ Clone this repository in the root folder of your installation of Unreal Tourname
 
 Create a .env file with the next lines, replacing the values in brackets:
 
-    DISCORD_TOKEN=[Token from Discord server]
+    DISCORD_TOKEN=[Token from your Discord bot]
     DISCORD_GUILD=[Name of Discord server]
     INI_FILE_NAME=[.ini file for UT99 server]
 
