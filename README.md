@@ -18,7 +18,7 @@ To start the bot execute the command:
     python bot.py
 
 ## Commands
-* **/run [gamemode] [players]**: This command launches a server with the desired gamemode. The server will be filled with bots as to satisfy the amount of players specified as a minimum. Only one server can be launched by the bot at any time.
+* **/run [gamemode] [players] [map (Optional)]**: This command launches a server with the desired gamemode. The server will be filled with bots as to satisfy the amount of players specified as a minimum. Only one server can be launched by the bot at any time. Optionally, a map can be selected, or one can be chosen at random by default.
 
 * **/maps**: Shows the user a list of the available maps for a certain gamemode.
 
