@@ -13,7 +13,7 @@ Make sure all libraries/modules required are installed.
 Create a .env file with the next lines, replacing the values in brackets:
 
     #.env
-    DISCORD_TOKEN=[Token from Discord server]
+    DISCORD_TOKEN=[Token from your Discord bot]
     DISCORD_GUILD=[Name of Discord server]
     INI_FILE_NAME=[.ini file for UT99 server]
 
