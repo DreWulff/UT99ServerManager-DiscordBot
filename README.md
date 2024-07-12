@@ -3,11 +3,16 @@
 A Discord bot written in Python for launching and managing an Unreal Tournament 99 server.  
 Commands are explained in the **Commands** section, and can be seen with a brief explanation during runtime by typing /help in the chat of the server it is in.
 
+**Its use is recommended for small Discord servers as it relies on sharing the public IP of the machine in which the UT99 server is running to the user through an ephemeral message for direct connection.**
+
 ## Setup
 Clone this repository in the root folder of your installation of Unreal Tournament.
 
+Make sure all libraries/modules required are installed.
+
 Create a .env file with the next lines, replacing the values in brackets:
 
+    #.env
     DISCORD_TOKEN=[Token from Discord server]
     DISCORD_GUILD=[Name of Discord server]
     INI_FILE_NAME=[.ini file for UT99 server]
@@ -18,15 +23,23 @@ To start the bot execute the command:
     python bot.py
 
 ## Commands
-* **/run [gamemode] [players]**: This command launches a server with the desired gamemode. The server will be filled with bots as to satisfy the amount of players specified as a minimum. Only one server can be launched by the bot at any time.
+* **/run [gamemode] [players] [map=Random]**:
+  * Launches a server with the desired gamemode.
+  * The server will be filled with bots as to satisfy the amount of players specified as a minimum.
+  * Only one server can be launched by the bot at any time.
+  * The map is selected by random as a default, but can be optionally specified.
 
-* **/maps**: Shows the user a list of the available maps for a certain gamemode.
+* **/maps**:
+  * Shows the user a list of the available maps for a certain gamemode.
 
-* **/stop**: Stops the currently running server.
+* **/stop**:
+  * Stops the currently running server.
 
-* **/join**: Shows the user that sent the command an ephemeral message that indicates the current public IP and port of the running server, alongside instructions to join.
+* **/join**:
+  * Shows the user that sent the command an ephemeral message that indicates the current public IP and port of the running server, alongside instructions to join.
 
-* **/help**: Shows the user that sent the command an ephemeral message that explains each command supported by the bot.
+* **/help**:
+  * Shows the user that sent the command an ephemeral message that explains each command supported by the bot.
 
 ## Notes
 * The bot checks if certain files are present to see what gamemodes and maps are available.

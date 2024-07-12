@@ -2,15 +2,15 @@
 import os
 import random
 import subprocess
-import public_ip as ip
-import glob # Library for regular expressions in file names
+import public_ip as ip  # Used for /join command
+import glob             # Used for finding files using regular expressions
 import fileinput
 import sys
+from dotenv import load_dotenv
 
 import discord
 from discord import app_commands
 from discord.ext import commands
-from dotenv import load_dotenv
 from discord.app_commands import Choice
 
 # .env variables
@@ -23,6 +23,9 @@ SV = None
 SV_STATUS = False
 SV_CMD_PREFIX = '\..\System/ucc.exe" '
 SV_CMD_RUN = 'server {map}?game={mode} ini={ini} log=server1.log'
+BOT_PATH = os.path.dirname(os.path.realpath(__file__))
+
+# List of supported modes
 SV_MODE = {
     'DeathMatch': 'BotPack.DeathMatchPlus',
     'TeamDeathMatch': 'BotPack.TeamGamePlus',
@@ -35,6 +38,8 @@ SV_MODE = {
     'MonsterArena': 'MonsterHunt.MonsterHuntArena',
     'MonsterDefence': 'MonsterHunt.MonsterHuntDefence'
 }
+
+# Map name prefixes for each mode
 SV_MAPS = {
     'DeathMatch': 'DM',
     'TeamDeathMatch': 'DM',
@@ -47,15 +52,15 @@ SV_MAPS = {
     'MonsterArena': 'MA',
     'MonsterDefence': 'CTF'
 }
-BOT_PATH = os.path.dirname(os.path.realpath(__file__))
 
+# Variables for bot initialization
 INTENTS = discord.Intents.default()
 INTENTS.message_content = True
 BOT = commands.Bot(command_prefix="!", intents=INTENTS)
 
 async def get_maps (mode):
     """
-    Returns the list of maps of a certain mode.
+    Returns the list of maps of a specific mode.
     """
     maps = glob.glob('{path}\..\Maps\{mode}-*.unr'.format(path=BOT_PATH,
                                                         mode=SV_MAPS[mode]))
@@ -65,7 +70,7 @@ async def get_maps (mode):
 
 async def get_map_choices (mode):
     """
-    Returns the list of maps of a certain mode as Discord choices.
+    Returns the list of maps of a specific mode as Discord choices.
     """
     maps = await get_maps(mode)
     maps = [discord.app_commands.Choice(name=map_name, value=map_name) for map_name in maps]
