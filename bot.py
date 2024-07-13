@@ -68,12 +68,12 @@ async def get_maps (mode):
     maps = [map_path.split('\\')[-1].split('.')[0] for map_path in maps]
     return maps
 
-async def get_map_choices (mode):
+async def get_map_choices (mode, current):
     """
     Returns the list of maps of a specific mode as Discord choices.
     """
     maps = await get_maps(mode)
-    maps = [discord.app_commands.Choice(name=map_name, value=map_name) for map_name in maps]
+    maps = [discord.app_commands.Choice(name=map_name, value=map_name) for map_name in maps if (current in map_name)]
     return maps[:25]
 
 async def get_modes():
@@ -149,7 +149,7 @@ async def autocomplete_mode(
 async def autocomplete_map(
     interaction: discord.Interaction,
     current: str):
-    return await get_map_choices(interaction.namespace.mode)
+    return await get_map_choices(interaction.namespace.mode, interaction.namespace.map_name)
 
 
 @BOT.tree.command(name="maps", description="Shows a list of maps for given mode")
