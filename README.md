@@ -6,7 +6,9 @@ Commands are explained in the **Commands** section, and can be seen with a brief
 **Its use is recommended for small Discord servers as it relies on sharing the public IP of the machine in which the UT99 server is running to the user through an ephemeral message for direct connection.**
 
 ## Setup
-Clone this repository in the root folder of your installation of Unreal Tournament.
+Clone this repository in the root folder of your installation of Unreal Tournament with the following command:
+
+    git clone https://github.com/DreWulff/UT99-ServerManager
 
 Make sure all libraries/modules required are installed.
 

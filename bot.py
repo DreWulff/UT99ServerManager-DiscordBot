@@ -1,16 +1,18 @@
 # bot.py
+# Python libraries
 import os
 import random
 import subprocess
-import public_ip as ip  # Used for /join command
-import glob             # Used for finding files using regular expressions
+import glob
 import fileinput
 import sys
-from dotenv import load_dotenv
 
+# External libraries
+from dotenv import load_dotenv
+import public_ip as ip  # Used for /join command
 import discord
 from discord import app_commands
-from discord.ext import commands
+from discord.ext import commands, tasks
 from discord.app_commands import Choice
 
 # .env variables
@@ -21,7 +23,7 @@ INI_FILE = os.getenv('INI_FILE_NAME')
 # Variables for UT99 server management
 SV = None
 SV_STATUS = False
-SV_CMD_PREFIX = '\..\System/ucc.exe" '
+SV_CMD_PREFIX = '/../System/ucc.exe" '
 SV_CMD_RUN = 'server {map}?game={mode} ini={ini} log=server1.log'
 BOT_PATH = os.path.dirname(os.path.realpath(__file__))
 
@@ -62,7 +64,7 @@ async def get_maps (mode):
     """
     Returns the list of maps of a specific mode.
     """
-    maps = glob.glob('{path}\..\Maps\{mode}-*.unr'.format(path=BOT_PATH,
+    maps = glob.glob('{path}/../Maps/{mode}-*.unr'.format(path=BOT_PATH,
                                                         mode=SV_MAPS[mode]))
     
     maps = [map_path.split('\\')[-1].split('.')[0] for map_path in maps]
@@ -88,13 +90,13 @@ async def get_modes():
         discord.app_commands.Choice(name="Domination", value="Domination"),
         discord.app_commands.Choice(name="Last Man Standing", value="LastManStanding")
     ]
-    if (os.path.isfile(BOT_PATH + "\..\System\MonsterHunt.u")):
+    if (os.path.isfile(BOT_PATH + "/../System/MonsterHunt.u")):
         modes.extend([
             discord.app_commands.Choice(name="Monster Hunt", value="MonsterHunt"),
             discord.app_commands.Choice(name="Monster Arena", value="MonsterArena"),
             discord.app_commands.Choice(name="Monster Defence", value="MonsterDefence")
         ])
-    if (os.path.isfile(BOT_PATH + "\..\System\GunGame.u")):
+    if (os.path.isfile(BOT_PATH + "/../System/GunGame.u")):
         modes.append(discord.app_commands.Choice(name="Gun Game", value="GunGame"))
     return modes
 
@@ -128,7 +130,7 @@ async def run(interaction: discord.Interaction, mode: str, players: int, map_nam
         # Edit .ini file to define number of bots
         if (mode in ("MonsterHunt", "MonsterArena", "MonsterDefence")):
             config_file = 'MonsterHunt.ini'
-        for line in fileinput.input(BOT_PATH + '\\..\\System\\' + config_file, inplace=True):
+        for line in fileinput.input(BOT_PATH + '/../System/' + config_file, inplace=True):
             if line.strip().startswith('MinPlayers='):
                 line = 'MinPlayers={min}\n'.format(min=players)
             sys.stdout.write(line)
@@ -196,6 +198,5 @@ async def help(interaction: discord.Interaction):
                                             "**joke**: Eat that!\n"+
                                             "**get game**: Get the game's download link and installation instructions",
                                             ephemeral=True)
-
 
 BOT.run(TOKEN)
