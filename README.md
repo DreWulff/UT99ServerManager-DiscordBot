@@ -20,6 +20,7 @@ Create a .env file with the next lines, replacing the values in brackets:
     INI_FILE_NAME=[.ini file for UT99 server]
 
 To obtain the token you must first have a Discord app/bot. To get started I would recommend to follow the official Discord Developer Portal documentation in [Building your first Discord app](https://discord.com/developers/docs/quick-start/getting-started).
+
 ## Run
 To start the bot execute the command:
 
