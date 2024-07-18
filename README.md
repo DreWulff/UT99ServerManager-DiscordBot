@@ -18,9 +18,9 @@ Make sure all libraries/modules required are installed.
 
 Create a `.env` file with the next lines, replacing the values in brackets:
 
-    DISCORD_TOKEN=<span style="color:#888">[Token from your Discord bot]</span><br>
-    DISCORD_GUILD=<span style="color:#888">[Name of Discord server]</span><br>
-    INI_FILE_NAME=<span style="color:#888">[.ini file for UT99 server]</span>
+    DISCORD_TOKEN=[Token from your Discord bot]
+    DISCORD_GUILD=[Name of Discord server]
+    INI_FILE_NAME=[.ini file for UT99 server]
 
 To obtain the token you must first have a Discord app/bot. To get started I would recommend to follow the official Discord Developer Portal documentation in [Building your first Discord app](https://discord.com/developers/docs/quick-start/getting-started).
 
