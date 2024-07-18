@@ -1,28 +1,3 @@
-<style>
-  .code-block
-  {
-    background-color: #2B2B2B;
-    border-radius:4px;
-    border: 1px #323232 solid;
-    padding-left: 16px;
-    margin-bottom: 16px;
-    font-family: "consolas";
-  }
-  .code-label
-  {
-    color: #777;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border-bottom: 1px #666 solid;
-    margin-bottom: 4px;
-    margin-right: 2%;
-  }
-  .code
-  {
-    color: #cdcdcd;
-  }
-</style>
-
 # Server Manager: Unreal Tournament 99
 ## Description
 A Discord bot written in Python for launching and managing an Unreal Tournament 99 server in Windows.  
@@ -42,15 +17,10 @@ Download and extract the latest release, or clone this repository in the root fo
 Make sure all libraries/modules required are installed.
 
 Create a `.env` file with the next lines, replacing the values in brackets:
-<div class=code-block>
 
-<p class=code-label>.env</p>
-<p class=code>
-DISCORD_TOKEN=<span style="color:#888">[Token from your Discord bot]</span><br>
-DISCORD_GUILD=<span style="color:#888">[Name of Discord server]</span><br>
-INI_FILE_NAME=<span style="color:#888">[.ini file for UT99 server]</span>
-</p>
-</div>
+    DISCORD_TOKEN=<span style="color:#888">[Token from your Discord bot]</span><br>
+    DISCORD_GUILD=<span style="color:#888">[Name of Discord server]</span><br>
+    INI_FILE_NAME=<span style="color:#888">[.ini file for UT99 server]</span>
 
 To obtain the token you must first have a Discord app/bot. To get started I would recommend to follow the official Discord Developer Portal documentation in [Building your first Discord app](https://discord.com/developers/docs/quick-start/getting-started).
 
