@@ -3,6 +3,10 @@
 A Discord bot written in Python for launching and managing an Unreal Tournament 99 server in Windows.  
 Commands are explained in the [Commands](#discord--commands) section, and can be seen with a brief explanation during runtime by typing `/help` in the chat of the server it is in.
 
+|![Screenshot](Screenshot.png)|
+|:--:|
+|*Bot at work*|
+
 **Its use is recommended for small Discord servers as it relies on sharing the public IP of the machine in which the UT99 server is running to the user through an ephemeral message for direct connection.**
 
 ## Setup
