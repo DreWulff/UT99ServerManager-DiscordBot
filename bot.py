@@ -197,7 +197,7 @@ async def help(interaction: discord.Interaction):
                                             "   * Launches a server with the desired gamemode.\n"+
                                             " * The server will be filled with bots as to satisfy the amount of players specified as a minimum.\n"+
                                             " * Only one server can be launched by the bot at any time.\n"+
-                                            " * The map is selected by random as a default, but can be optionally specified.\n"+
+                                            " * The map is selected at random as a default, but can be optionally specified.\n"+
                                             "* `/maps [mode]`:\n"+
                                             "   * Shows the user a list of the available maps for a certain gamemode.\n"+
                                             "* `/stop`:\n"+

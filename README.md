@@ -34,7 +34,7 @@ To start the bot execute the command:
   * Launches a server with the desired gamemode.
   * The server will be filled with bots as to satisfy the amount of players specified as a minimum.
   * Only one server can be launched by the bot at any time.
-  * The map is selected by random as a default, but can be optionally specified.
+  * The map is selected at random as a default, but can be optionally specified.
 
 * `/maps [mode]`:
   * Shows the user a list of the available maps for a certain gamemode.
