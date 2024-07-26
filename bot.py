@@ -193,10 +193,19 @@ async def join(interaction: discord.Interaction):
 
 @BOT.tree.command(name="help", description="Give a list of the available commands")
 async def help(interaction: discord.Interaction):
-    await interaction.response.send_message("**run**: Starts a UT99 server with the specified game mode\n"+
-                                            "**stop**: Forcefully stops the UT99 server\n"+
-                                            "**joke**: Eat that!\n"+
-                                            "**get game**: Get the game's download link and installation instructions",
+    await interaction.response.send_message("* `/run [mode] [players] [map=Random]`:\n"+
+                                            "   * Launches a server with the desired gamemode.\n"+
+                                            " * The server will be filled with bots as to satisfy the amount of players specified as a minimum.\n"+
+                                            " * Only one server can be launched by the bot at any time.\n"+
+                                            " * The map is selected by random as a default, but can be optionally specified.\n"+
+                                            "* `/maps [mode]`:\n"+
+                                            "   * Shows the user a list of the available maps for a certain gamemode.\n"+
+                                            "* `/stop`:\n"+
+                                            "   * Forcefully stops the UT99 server\n"+
+                                            "* `/join`:\n"+
+                                            "   * Shows the user that sent the command an ephemeral message that indicates the current public IP and port of the running server, alongside instructions to join.\n"+
+                                            "* `/help`:\n"+
+                                            "   * Shows the user that sent the command an ephemeral message that explains each command supported by the bot.",
                                             ephemeral=True)
 
 BOT.run(TOKEN)
