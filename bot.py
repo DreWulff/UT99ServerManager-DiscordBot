@@ -68,7 +68,7 @@ def get_maps (mode):
 
 def get_random_map (mode):
     """Returns a random map for the specified mode."""
-    maps = get_maps()
+    maps = get_maps(mode)
     rand_index = random.randrange(len(maps))
     return maps[rand_index]
 
