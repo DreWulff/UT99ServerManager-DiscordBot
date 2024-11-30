@@ -7,7 +7,8 @@ Commands are explained in the [Commands](#discord--commands) section, and can be
 |:--:|
 |*Bot at work*|
 
-**Its use is recommended for small Discord servers as it relies on sharing the public IP of the machine in which the UT99 server is running to the user through an ephemeral message for direct connection.**
+> [!WARNING]
+> **Its use is recommended for small Discord servers as it relies on sharing the public IP of the machine in which the UT99 server is running to the user through an ephemeral message for direct connection.**
 
 ## Setup
 Download and extract the latest release, or clone this repository in the root folder of your installation of Unreal Tournament with the following command:
@@ -22,7 +23,8 @@ Create a `.env` file with the next lines, replacing the values in brackets:
     DISCORD_GUILD=[Name of Discord server]
     INI_FILE_NAME=[.ini file for UT99 server]
 
-To obtain the token you must first have a Discord app/bot. To get started I would recommend to follow the official Discord Developer Portal documentation in [Building your first Discord app](https://discord.com/developers/docs/quick-start/getting-started).
+> [!NOTE]
+> To obtain the token you must first have a Discord app/bot. To get started I would recommend to follow the official Discord Developer Portal documentation in [Building your first Discord app](https://discord.com/developers/docs/quick-start/getting-started).
 
 ## Run
 To start the bot execute the command:
