@@ -1,0 +1,1 @@
+call pip install python-dotenv public-ip discord.py
