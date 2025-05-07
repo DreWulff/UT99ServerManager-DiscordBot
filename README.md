@@ -9,7 +9,8 @@ Commands are explained in the [Commands](#discord--commands) section, and can be
 | :---------------------------: |
 |         _Bot at work_         |
 
-> [!WARNING] > **Its use is recommended for small Discord servers as it relies on sharing the public IP of the machine in which the UT99 server is running to the user through an ephemeral message for direct connection.**
+> [!WARNING]
+> **Its use is recommended for small Discord servers as it relies on sharing the public IP of the machine in which the UT99 server is running to the user through an ephemeral message for direct connection.**
 
 ## Setup
 
